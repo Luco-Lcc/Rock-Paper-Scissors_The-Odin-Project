@@ -18,5 +18,10 @@ function getComputerChoice() {
     if (pc_number===3) {
         pc_selection = "Scissors";
     }
+    
+    return pc_selection;
 }
+
+let a = getComputerChoice();
+
 
