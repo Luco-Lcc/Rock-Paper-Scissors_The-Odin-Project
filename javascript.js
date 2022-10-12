@@ -22,6 +22,17 @@ function getComputerChoice() {
     return pc_selection;
 }
 
-let a = getComputerChoice();
+
+// Player Selection
+
+let playerSelection = "Scissor";
+
+if (playerSelection.toLowerCase()==="rock" || playerSelection.toLowerCase()==="paper" || playerSelection.toLowerCase()==="scissors") {
+    console.log("Valid Choice!");
+} else {
+    console.log("Invalid Choice");
+}
+
+
 
 
