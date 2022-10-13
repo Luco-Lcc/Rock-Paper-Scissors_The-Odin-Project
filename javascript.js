@@ -57,6 +57,7 @@ function playRound(playerSelection, computerSelection) {
         }
         if (playerSelection==="rock" && computerSelection ==="rock"){
             // console.log("Draw!");
+            return winner = "none"
         }
         if (playerSelection==="paper" && computerSelection ==="rock"){
             // console.log("You Win!");
@@ -68,6 +69,7 @@ function playRound(playerSelection, computerSelection) {
         }
         if (playerSelection==="paper" && computerSelection ==="paper"){
             // console.log("Draw!");
+            return winner = "none"
         }
         if (playerSelection==="scissors" && computerSelection ==="paper"){
             // console.log("You Win!");
@@ -79,19 +81,71 @@ function playRound(playerSelection, computerSelection) {
         }
         if (playerSelection==="scissors" && computerSelection ==="scissors"){
             // console.log("Draw!");
+            return winner = "none"
         }
 
     }
 
 }
 
-let playerSelection = "Paper";
-let computerSelection = getComputerChoice();
+// Play a 5-Round Game Function
 
-console.log("Player selection: " + playerSelection);
-console.log("Computer Selection: " + computerSelection);
+function game() {
+    let playerPoints = 0;
+    let computerPoints = 0;
 
-let result = playRound(playerSelection, computerSelection);
+    for (let i=0; i<5; i++) {
+        let playerSelection = prompt("Please, select Rock, Paper or Scissors");
+        let computerSelection = getComputerChoice();
 
-console.log("The winner is: " + result + "!");
+        console.log("Player selection: " + playerSelection);
+        console.log("Computer Selection: " + computerSelection);
+
+        let result = playRound(playerSelection, computerSelection);
+
+        if (result === "player") {
+            console.log("You Win");
+            playerPoints++;
+        }
+
+        if (result === "computer") {
+            console.log("You Lose");
+            computerPoints++;
+        }
+
+        if (result === "none") {
+            console.log("Draw");
+        }
+        console.log("Score: Player " + playerPoints + " x " + computerPoints + " Computer" )
+
+    }
+
+    if (playerPoints>computerPoints) {
+        console.log("You are the Winner!")
+    }
+
+    if (playerPoints<computerPoints) {
+        console.log ("You are the Looser!")
+    }
+
+    if (playerPoints===computerPoints) {
+        console.log ("Draw!");
+    }
+}
+
+
+game()
+
+
+
+
+// let playerSelection = "Paper";
+// let computerSelection = getComputerChoice();
+
+// console.log("Player selection: " + playerSelection);
+// console.log("Computer Selection: " + computerSelection);
+
+// let result = playRound(playerSelection, computerSelection);
+
+// console.log("The winner is: " + result + "!");
 
