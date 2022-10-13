@@ -48,33 +48,50 @@ function playRound(playerSelection, computerSelection) {
     } else {
 
         if (playerSelection==="rock" && computerSelection ==="scissors"){
-            console.log("You Win!");
+            // console.log("You Win!");
+            return winner = "player";
         }
         if (playerSelection==="rock" && computerSelection ==="paper"){
-            console.log("You Lose!");
+            // console.log("You Lose!");
+            return winner = "computer";
         }
         if (playerSelection==="rock" && computerSelection ==="rock"){
-            console.log("Draw!");
+            // console.log("Draw!");
         }
         if (playerSelection==="paper" && computerSelection ==="rock"){
-            console.log("You Win!");
+            // console.log("You Win!");
+            return winner = "player";
         }
         if (playerSelection==="paper" && computerSelection ==="scissors"){
-            console.log("You Lose!");
+            // console.log("You Lose!");
+            return winner = "computer";
         }
         if (playerSelection==="paper" && computerSelection ==="paper"){
-            console.log("Draw!");
+            // console.log("Draw!");
         }
         if (playerSelection==="scissors" && computerSelection ==="paper"){
-            console.log("You Win!");
+            // console.log("You Win!");
+            return winner = "player";
         }
         if (playerSelection==="scissors" && computerSelection ==="rock"){
-            console.log("You Lose!");
+            // console.log("You Lose!");
+            return winner = "computer";
         }
         if (playerSelection==="scissors" && computerSelection ==="scissors"){
-            console.log("Draw!");
+            // console.log("Draw!");
         }
 
     }
 
 }
+
+let playerSelection = "Paper";
+let computerSelection = getComputerChoice();
+
+console.log("Player selection: " + playerSelection);
+console.log("Computer Selection: " + computerSelection);
+
+let result = playRound(playerSelection, computerSelection);
+
+console.log("The winner is: " + result + "!");
+
