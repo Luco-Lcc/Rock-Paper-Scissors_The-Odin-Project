@@ -25,13 +25,20 @@ function getComputerChoice() {
 
 // Player Selection
 
-let playerSelection = "Scissor";
+function playerSelectionValidation(playerSelection) {
 
-if (playerSelection.toLowerCase()==="rock" || playerSelection.toLowerCase()==="paper" || playerSelection.toLowerCase()==="scissors") {
-    console.log("Valid Choice!");
-} else {
-    console.log("Invalid Choice");
+    if (playerSelection.toLowerCase()==="rock" || playerSelection.toLowerCase()==="paper" || playerSelection.toLowerCase()==="scissors") {
+        console.log("Valid Choice!");
+        playerSelectionStatus = true;
+    } else {
+        console.log("Invalid Choice");
+        playerSelectionStatus = false;
+    }
+    return playerSelectionStatus;
 }
+
+
+
 
 
 
